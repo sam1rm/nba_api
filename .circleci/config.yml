@@ -19,7 +19,7 @@ jobs:
       - checkout
       # - run: poetry install
       - run: echo <<parameters.circle_pr_number>>
-      - unless:
+      - when:
           condition: <<parameters.circle_pr_number>>
           steps:
             - run: echo "snyk"
